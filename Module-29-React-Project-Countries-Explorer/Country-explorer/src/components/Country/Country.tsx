@@ -3,10 +3,11 @@ import type { CountryType } from "../../type"
 import './Country.css'
 
 export interface CountryProps {
-    country: CountryType
+    country: CountryType,
+    handleVisitedCountry:(country:CountryType)=>void
 }
 
-export default function Country({ country }: CountryProps) {     //receiving single country data from Countries.tsx
+export default function Country({ country,handleVisitedCountry }: CountryProps) {     //receiving single country data from Countries.tsx
     
     //c29-5
     const [visited,setVisited]=useState<boolean>(false)
@@ -14,7 +15,7 @@ export default function Country({ country }: CountryProps) {     //receiving sin
     const handleVisited =()=>{
         // setVisited(true)
         
-        //create toggle (select-unselect option)
+        //creating toggle (i.e select-unselect option)
             // if(visited==true){
             //     setVisited(false)
             // }else{
@@ -23,6 +24,8 @@ export default function Country({ country }: CountryProps) {     //receiving sin
 
         //shorthand
         setVisited(!visited);
+        
+        handleVisitedCountry(country)
     }
 
 
