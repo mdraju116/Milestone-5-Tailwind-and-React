@@ -14,7 +14,7 @@ NB:
             <h4>No of Visited Flags:{visitedflags.length}</h4>
             <div className="visited-flags">
                 {
-                    visitedflags.map(flag=> <img  src={flag} alt="Visited Flag"/>)
+                    visitedflags.map((flag,index)=> <img  key={index} src={flag} alt="Visited Flag"/>)
                 }
             </div>
 
@@ -24,7 +24,7 @@ NB:
         <div>
             <ul>
             {
-                visitedCountries.map(country => <li >{country.name.common} </li>)
+                visitedCountries.map(country => <li key={country.ccn3.ccn3}>{country.name.common} </li>)
             }
             </ul>
         </div>
