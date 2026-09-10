@@ -13,7 +13,7 @@ export default function Countries({ countriesPromise }: CountriesProps) {  //rec
 
 
     //c29-6
-    const [visitedCountries,setVisitedCountry] =useState <CountryType[]>([])
+    const [visitedCountries,setVisitedCountry] =useState <CountryType[]>([]);
 
     const handleVisitedCountry = (country:CountryType):void=>{
             const newVisitedCountry =[...visitedCountries, country];
@@ -21,11 +21,27 @@ export default function Countries({ countriesPromise }: CountriesProps) {  //rec
     }
 
 
+    //29-7
+    const [visitedflags, setVisitedFlags] =useState <string[]> ([]);
+
+    const handleVisitedFlags =(flag:string):void =>{
+
+        if(visitedflags.includes(flag)){
+            const remainingFlags = visitedflags.filter((f)=>f!==flag);
+            setVisitedFlags(remainingFlags);
+        }else{
+            const newVisitedFlags =[...visitedflags,flag]
+            setVisitedFlags(newVisitedFlags);
+        }
+    }
+
 
     return (                //showing the loaded countries data to the screen
         <div >
             <h2>No of Countries:{countries.length} </h2>  
             <h4>No of Visited Countries:{visitedCountries.length}</h4>
+            <h4>No of Visited Flags:{visitedflags.length}</h4>
+
 
         <div className="countries">           {/*sending every single country data to Country.tsx  */}
                    
@@ -34,7 +50,9 @@ export default function Countries({ countriesPromise }: CountriesProps) {  //rec
                     key={country.ccn3.ccn3} 
                     country={country}
                     handleVisitedCountry ={handleVisitedCountry}
-                    
+                    handleVisitedFlags ={handleVisitedFlags}
+
+
                     ></Country>)  
               }
         </div>

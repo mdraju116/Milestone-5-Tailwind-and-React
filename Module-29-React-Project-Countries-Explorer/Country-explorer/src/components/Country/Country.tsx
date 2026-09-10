@@ -4,10 +4,12 @@ import './Country.css'
 
 export interface CountryProps {
     country: CountryType,
-    handleVisitedCountry:(country:CountryType)=>void
+    handleVisitedCountry:(country:CountryType)=>void,
+    handleVisitedFlags:(flags:string)=>void
+
 }
 
-export default function Country({ country,handleVisitedCountry }: CountryProps) {     //receiving single country data from Countries.tsx
+export default function Country({ country,handleVisitedCountry,handleVisitedFlags }: CountryProps) {     //receiving single country data from Countries.tsx
     
     //c29-5
     const [visited,setVisited]=useState<boolean>(false)
@@ -24,8 +26,8 @@ export default function Country({ country,handleVisitedCountry }: CountryProps) 
 
         //shorthand
         setVisited(!visited);
-        
-        handleVisitedCountry(country)
+
+        handleVisitedCountry(country); //c29-6
     }
 
 
@@ -36,6 +38,7 @@ export default function Country({ country,handleVisitedCountry }: CountryProps) 
             <h4>Capital: {country.capital.capital}</h4>
             <h4 >Population: {country.population.population}</h4>
             <button onClick={handleVisited}> {visited ? "Visited": "Mark as Visited"}</button>
+            <button onClick ={ ()=>handleVisitedFlags(country.flags.flags.png)} > Add Flag as Visited </button>
 
         </div>
     )
