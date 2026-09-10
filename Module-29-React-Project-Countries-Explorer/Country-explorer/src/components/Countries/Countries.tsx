@@ -16,8 +16,17 @@ export default function Countries({ countriesPromise }: CountriesProps) {  //rec
     const [visitedCountries,setVisitedCountry] =useState <CountryType[]>([]);
 
     const handleVisitedCountry = (country:CountryType):void=>{
-            const newVisitedCountry =[...visitedCountries, country];
-            setVisitedCountry(newVisitedCountry);
+            
+        //c29-8
+            const exists = visitedCountries.find(c =>c.ccn3.ccn3 === country.ccn3.ccn3);
+            if(exists){
+                const remainingCountries = visitedCountries.filter(c=>c.ccn3.ccn3 !== country.ccn3.ccn3);
+                setVisitedCountry(remainingCountries);
+
+            }else{
+                const newVisitedCountry =[...visitedCountries, country];
+                setVisitedCountry(newVisitedCountry);
+            }
     }
 
 
@@ -40,8 +49,23 @@ export default function Countries({ countriesPromise }: CountriesProps) {  //rec
         <div >
             <h2>No of Countries:{countries.length} </h2>  
             <h4>No of Visited Countries:{visitedCountries.length}</h4>
+
+            {/* c29-8 */}
+            <div>
+               <ul>
+                {
+                    visitedCountries.map(country => <li >{country.name.common} </li>)
+                }
+               </ul>
+            </div>
+           
             <h4>No of Visited Flags:{visitedflags.length}</h4>
 
+            <div className="visited-flags">
+                {
+                    visitedflags.map(flag=> <img  src={flag} alt="Visited Flag"/>)
+                }
+            </div>
 
         <div className="countries">           {/*sending every single country data to Country.tsx  */}
                    

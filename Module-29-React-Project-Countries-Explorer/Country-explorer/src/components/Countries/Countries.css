@@ -5,3 +5,7 @@
     justify-items: center;
     gap: 10px;
 }
+
+.visited-flags img{
+    width: 80px ;
+}
