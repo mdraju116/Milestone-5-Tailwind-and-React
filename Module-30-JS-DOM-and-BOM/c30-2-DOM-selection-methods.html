@@ -1,0 +1,78 @@
+<!--
+✅ ➡️ 
+
+
+✅✅Finding HTML Elements
+Often, with JavaScript, you want to manipulate HTML elements.
+To do so, you have to find the elements first. There are several ways to do this:
+
+Finding HTML elements by id
+Finding HTML elements by tag name
+Finding HTML elements by class name
+
+Finding HTML elements by CSS selectors
+    -The querySelector() Method
+    -The querySelectorAll() Method
+
+QuerySelector vs QuerySelectorAll
+-querySelector will take only the first element -among multiple element with the same tag/id/class name
+-querySelectorAll will take all the element -among multiple element with the same tag/id/class name
+
+Html collection vs Nodelist
+
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+</head>
+<body>
+    
+
+    <h2>Hello Bangladesh</h2>
+    <h2>Bangladesh is in Danger now</h2>
+
+    <p id="work">What are you doing?</p>
+    <p class="awarness">It is high time to wake up.</p>
+
+    <input type="text" name="" id="" placeholder="Write your name">
+    <input type="file" name="" id="" placeholder="Choose your photo">
+
+</body>
+
+
+
+<script>
+
+    const hello= document.getElementsByTagName("h2");
+    console.log(hello);//HTMLCollection(2) [h2, h2]
+    
+
+    const work= document.getElementById("work");
+    console.log(work);//p#work
+
+    const aware= document.getElementsByClassName("awarness");
+    console.log(aware); //HTMLCollection [p.awarness]
+
+    const inp =document.getElementsByTagName("input")
+    console.log(inp);//HTMLCollection(2) [input, input]
+
+
+
+    const oneP=document.querySelector("p")
+    console.log(oneP);//p#work
+
+    const allP =document.querySelectorAll("P")
+    console.log(allP);//NodeList(2) [p#work, p.awarness]
+    
+    
+</script>
+
+</html>
