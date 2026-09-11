@@ -6,10 +6,12 @@
 Often, with JavaScript, you want to manipulate HTML elements.
 To do so, you have to find the elements first. There are several ways to do this:
 
+//Older way:
 Finding HTML elements by id
 Finding HTML elements by tag name
 Finding HTML elements by class name
 
+//Modern way:
 Finding HTML elements by CSS selectors
     -The querySelector() Method
     -The querySelectorAll() Method
@@ -50,6 +52,7 @@ Html collection vs Nodelist
 
 
 <script>
+    //document is an object and get.... is an method/function
 
     const hello= document.getElementsByTagName("h2");
     console.log(hello);//HTMLCollection(2) [h2, h2]
