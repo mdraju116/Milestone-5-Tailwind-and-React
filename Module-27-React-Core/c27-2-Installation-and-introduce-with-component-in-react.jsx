@@ -4,22 +4,30 @@
 
 
 =>✅✅Install and Create First Project
-    -Go to vite.dev  =>getting started =>Scaffolding Your First Vite Project => using create vite with command line options
-    -copy: npm create vite@latest my-vue-app -- --template vue
-    -paste to local project directory (address bar) =>cmd  
+    -Go to vite.dev  =>getting started =>Scaffolding Your First Vite 	Project => 
 
-    -rename as : npm create vite@latest my-first-app -- --template react-ts   (enter)
+   ➡️➡️Option-1: copy : npm create vite@latest  (I will use it)
 
-    =>Ok to proceed? (y) : y 
-    =>Select a framework: React
-    =>Select a variant:TypeScript
-    =>Which linter to use? oxlint  :    (enter)
-    =>Install with npm and start now? : (enter)
-    -copy the local path and past to browser : http://localhost:5173/
+   ➡️➡️Option-2: using create vite with command line options
+    -copy: npm create vite@latest my-vue-app -- --template vue 
+    -rename as :
+     npm create vite@latest my-first-project -- --template react-ts 
 
-    -open vscode and open the my-first-app
+
+-paste to local project directory (address bar) =>cmd 
+    =>Ok to proceed? (y) (enter)
+    =>Project name : My-first-project  -(Need to type)
+    =>Package name:  my-first-project (small letter)  -(only enter)
+    =>Select a framework => React
+    =>Select a variant =>TypeScript
+    =>Which linter to use? => oxlint  
+    =>Install with npm and start now? => yes 
+    -copy the local path and paste to browser : http://localhost:5173/
+
+    -open vscode and open the my-first-project
     -here the app.tsx inside the src is the main part
-    
+
+
   ➡️Run using VsCode Terminal:
     -go to project name folder: cd my-react-app
     -npm install
